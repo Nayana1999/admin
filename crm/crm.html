@@ -1,0 +1,86 @@
+
+<html>
+<head>
+<title>CRM website</title>
+<style>
+			body {
+				font-family:sans-serif;
+				background-color: silver;
+				color: black;
+				font-size: large;
+			}
+			th {
+				text-align: left;
+			}
+			table {
+				background-color: gray;
+				border: 3px solid white;
+			}
+			a {
+				color: black;
+			}
+		</style>
+
+<script>
+			function checkFields() {
+				if (maiden.firstname.value == "") {
+					alert("Your first name is a required field.");
+					maiden.firstname.focus();
+					return false;
+				}
+				if (maiden.lastname.value == "") {
+					alert("Your last name is a required field.");
+					maiden.lastname.focus();
+					return false;
+				}
+				if (maiden.companyname.value == "") {
+					alert("Your company name is a required field.");
+					maiden.companyname.focus();
+					return false;
+				}
+				if (maiden.email.value == "") {
+					alert("Your email address is a required field.");
+					maiden.email.focus();
+					return false;
+				}
+				if (maiden.phonenumber.value == "") {
+					alert("Your phone number is a required field.");
+					maiden.phonenumber.focus();
+					return false;
+				}
+				//the fields all have values; submit the form
+				maiden.submit();
+			}
+			function goHome() {
+				window.document.location.assign("index.php");
+			}
+		</script>
+</head>
+<body>
+<form name="maiden" method="post" action="crm.php">
+<center>
+<h1><u>CRM Website</u></h1>
+<h3>Customer Registration</h3>
+<div id="message">Enter customer information below.</div>
+<br />
+<table cellpadding="8">
+<tr>
+<th>First Name:</th><td><input type="text" name="firstname" /></td>
+</tr><tr>
+<th>Last Name:</th><td><input type="text" name="lastname" /></td>
+</tr><tr>
+<th>Company Name:</th><td><input type="text" name="companyname" /></td>
+</tr><tr>
+<th>Email Address:</th><td><input type="text" name="email" /></td>
+</tr><tr>
+<th>Phone Number:</th><td><input type="text" name="phonenumber" /></td>
+</tr><tr>
+<th>Country Code:</th><td><input type="text" size="2" maxlength="2" name="country" /></td>
+</tr><tr>
+<th>&nbsp;</th><td><input type="submit" value="Register" /> &nbsp; <input type="reset" value="Clear Form" /></td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>
